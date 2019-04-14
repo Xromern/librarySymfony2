@@ -1,0 +1,27 @@
+{% extends  "base.html.twig" %}
+{% block body %}
+
+    <div class="main">
+
+
+        {% for book in books %}
+         <div class="container-Book">
+             <div class="container-image">
+                 <img src="{{ asset('image/cover/') }}{{ book.cover }}">
+             </div>
+         <div class="container-content">
+             <a href="/{{ book.book_id }}"><h2>{{ book.title }}</a></h2>
+             <b>Автор: </b>{{ book.writers_name }}<br>
+             <b>Год:</b> {{ book.date }}<br><br>
+        {{book.description_Book }}
+        </div>
+             <div class="container-bottom">
+                 <a class="button" href="/{{ book.book_id }}/show">Обзор</a>
+                 <a class="button"  href="/{{ book.book_id }}/update">Редактировать</a>
+                 <a class="button"  href="/{{ book.book_id }}/delete">Удалить</a>
+             </div>
+         </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

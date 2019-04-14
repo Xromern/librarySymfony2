@@ -1,0 +1,26 @@
+{% extends  "base.html.twig" %}
+{% block body %}
+
+    <div class="main">
+    <div class="container-Book-info">
+        <div class="container-image">
+            <img src="{{ asset('image/cover/') }}{{ book.cover }}">
+        </div>
+        <div class="container-content">
+            <a href="/{{ book.book_id }}"><h2>{{ book.title }}</a></h2>
+            <b>Автор: </b>{{ book.writers_name }}<br>
+            <b>Год:</b> 0000<br>
+            <b>Жанр: </b>
+
+            {% for genre in genres %}
+            {{ genre.genre_title }}
+            {% endfor %}
+            <br><br>
+            {{ book.description_Book }}
+        </div>
+        {% if book.book_pdf != null %}
+            <iframe src="{{ asset('pdf/') }}{{ book.book_pdf }}" width="795" height="600"></iframe>
+        {% endif %}
+
+    </div>
+{% endblock %}

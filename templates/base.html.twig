@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+            <link href="{{ asset('style/style.css') }}" rel="stylesheet">
+        {% endblock %}
+
+    </head>
+    <body>
+    <div class="gon-container">
+        <div class="container-head">
+    </div>
+        <a href="/create" class="button button-create">Создать</a>
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+    </div>
+    </body>
+</html>

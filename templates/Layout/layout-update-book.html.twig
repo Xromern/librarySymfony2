@@ -1,0 +1,14 @@
+{% extends  "base.html.twig" %}
+{% block body %}
+
+    <div class="main">
+    <div class="container-form">
+        {{ form_start(form, {  'method': 'POST', 'attr': {'class': 'library-form'} }) }}
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
+        {{ form_widget(form)}}
+        {{ form_end(form) }}
+
+    </div>
+{% endblock %}
